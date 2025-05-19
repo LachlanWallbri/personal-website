@@ -8,6 +8,7 @@ import Splash from "./components/Splash";
 import Intro from "./components/Intro";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
+import SkillsHoverBox from "./components/Skills";
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
         </section>
         <section id="intro" className="max-w-4xl mx-auto py-16 px-4">
           <Intro />
+          <h2 className="text-3xl font-semibold mt-12 mb-6">My Skills</h2>
+          {/* Skills */}
+          <SkillsHoverBox />
         </section>
         <section id="experience" className="max-w-4xl mx-auto py-16 px-4">
           <Experience />
