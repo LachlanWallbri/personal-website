@@ -36,3 +36,22 @@
 .animate-pulse-light {
   animation-name: pulse-light;
 }
+
+@keyframes breeze {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(4deg);
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
+  75% {
+    transform: rotate(1deg);
+  }
+}
+.animate-breeze {
+  animation: breeze 3s ease-in-out infinite;
+}
