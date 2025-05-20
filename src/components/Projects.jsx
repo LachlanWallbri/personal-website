@@ -48,9 +48,7 @@ const projectsData = [
 export default function Projects() {
   return (
     <div>
-      <h2 className="text-3xl font-semibold mb-8 text-center">Projects</h2>
-
-      <div className="flex flex-col max-w-7xl mx-auto px-4">
+      <div className="flex flex-col max-w-7xl mx-auto px-4 pb-0">
         {/* Bush */}
         <img
           src={bush}
@@ -122,8 +120,8 @@ function ProjectCard({ title, year, description, media = [], github }) {
   const current = media[currentIndex];
 
   return (
-    <div className="bg-white rounded-lg shadow p-6 flex flex-col">
-      <div className="relative aspect-w-16 aspect-h-9 rounded-md overflow-hidden bg-gray-100">
+    <div className="bg-gray-100 rounded-lg shadow p-6 flex flex-col">
+      <div className="relative aspect-video w-full rounded-md overflow-hidden bg-gray-100">
         {current.type === "image" ? (
           <img
             src={current.src}
