@@ -8,7 +8,7 @@ export default function Splash() {
     <div className="relative w-full h-screen flex flex-col items-center justify-center px-4 text-center overflow-hidden">
       {/* Video background */}
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover z-10"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
         src={videobg}
         autoPlay
         muted
