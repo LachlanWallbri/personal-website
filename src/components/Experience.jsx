@@ -60,6 +60,7 @@ const keywords = [
   "API",
   "90%",
   "20%",
+  "efficiency",
 ];
 // linear-gradient(90deg,#C72C48,  #F88F1D, #C72C48)
 const waveGradient =
@@ -109,10 +110,6 @@ const highlightKeywords = (text) => {
 export default function Experience() {
   return (
     <div className="bg-white rounded-lg shadow p-8 max-w-4xl mx-auto space-y-8">
-      <h2 className="text-3xl font-semibold mb-8 text-center">
-        Work Experience
-      </h2>
-
       <div className="relative border-l-2 border-gray-300 ml-4">
         {timelineItems.map((item, index) => (
           <motion.div

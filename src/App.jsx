@@ -17,27 +17,34 @@ function App() {
       <Header />
       <div className="min-h-screen bg-gray-50 text-gray-900 scroll-smooth relative z-[-20]">
         <main className="pt-12 z-20">
-          {/* to offset fixed header height */}
           <LanternsBackground />
+          {/* Splash Screen */}
           <section
             id="splash"
             className="min-h-screen flex items-center justify-center"
           >
             <Splash />
           </section>
+          {/* Main Content */}
           <section id="intro" className="max-w-4xl mx-auto py-16 px-4">
             <h2 className="text-3xl font-semibold mb-6 text-center">
               About Me
             </h2>
             <Intro />
           </section>
+          {/* Skills Section */}
           <section id="skills" className="w-full px-0 overflow-hidden">
             <h2 className="text-3xl font-semibold mb-6 text-center">Skills</h2>
             <SkillsHoverBox />
           </section>
+          {/* Experience Section */}
           <section id="experience" className="max-w-4xl mx-auto py-16 px-4">
+            <h2 className="text-3xl font-semibold mb-8 text-center">
+              Work Experience
+            </h2>
             <Experience />
           </section>
+          {/* Projects Section */}
           <section id="projects" className="max-w-6xl mx-auto py-16 px-4">
             <Projects />
           </section>

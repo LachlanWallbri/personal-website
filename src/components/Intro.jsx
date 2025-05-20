@@ -87,10 +87,23 @@ export default function About() {
 
       {/* Row 2: Description + Download CV */}
       <div>
-        <p className="text-gray-700 mb-4">
-          I am a passionate software developer with expertise in web and mobile
-          applications. I love building clean, scalable, and user-friendly
-          digital experiences.
+        <p className="text-gray-700 mb-4 text-justify">
+          I am a passionate software developer with a unique blend of expertise
+          in mechatronics and computer science. My background in mechatronics
+          has equipped me with a deep understanding of the integration between
+          mechanical, electronic, and software systems, allowing me to approach
+          problem-solving from a multidisciplinary perspective. Combining this
+          with my computer science knowledge, I specialize in designing and
+          developing clean, scalable, and user-friendly applications for both
+          web and mobile platforms.
+          <br />
+          <br />I thrive on building innovative digital experiences that not
+          only meet user needs but also leverage the seamless interaction
+          between hardware and software. Whether it’s developing robust backend
+          systems, crafting intuitive front-end interfaces, or integrating IoT
+          and embedded systems, I focus on creating solutions that are reliable,
+          efficient, and easy to maintain. My goal is to deliver impactful
+          technology that enhances everyday life and drives business success.
         </p>
 
         <div className="text-center">
