@@ -46,7 +46,7 @@ export default function Splash() {
         </a>
 
         <a
-          href="mailto:your.email@example.com"
+          href="mailto:lachlan.wallbridge@gmail.com"
           className="text-white hover:text-yellow-400 transition-colors duration-300 text-3xl"
           aria-label="Email"
         >

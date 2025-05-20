@@ -4,14 +4,14 @@ export default function SkillsHoverBox() {
   const [hoverSide, setHoverSide] = useState(null);
 
   return (
-    <div className="max-w-4xl mx-auto mt-12 rounded-lg overflow-hidden shadow-lg select-none flex h-48">
+    <div className="w-screen max-w-full mx-0 mt-4 rounded-lg overflow-hidden shadow-lg select-none flex h-48">
       {/* Left side - Professional */}
       <div
         onMouseEnter={() => setHoverSide("left")}
         onMouseLeave={() => setHoverSide(null)}
         className={`
           flex-1 flex flex-col justify-center items-center
-          bg-gradient-to-br from-purple-600 to-purple-400
+          bg-gradient-to-br from-gray-700 to-gray-900
           text-white font-semibold text-lg
           transition-all duration-500 cursor-pointer
           ${
@@ -29,6 +29,7 @@ export default function SkillsHoverBox() {
             <li>Team leadership</li>
             <li>Effective communication</li>
             <li>Project management</li>
+            <li>Problem-solving</li>
           </ul>
         )}
       </div>
@@ -39,7 +40,7 @@ export default function SkillsHoverBox() {
         onMouseLeave={() => setHoverSide(null)}
         className={`
           flex-1 flex flex-col justify-center items-center
-          bg-gradient-to-br from-blue-600 to-blue-400
+          bg-gradient-to-br from-gray-500 to-gray-700
           text-white font-semibold text-lg
           transition-all duration-500 cursor-pointer
           ${
