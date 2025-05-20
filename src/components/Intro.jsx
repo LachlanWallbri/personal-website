@@ -1,6 +1,7 @@
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import lachlan from "../assets/Lachlan.png";
+import resume from "../assets/graduateResume.pdf";
 
 export default function About() {
   const birthDate = new Date(2002, 11, 9);
@@ -94,7 +95,7 @@ export default function About() {
 
         <div className="text-center">
           <a
-            href="/path/to/your-cv.pdf"
+            href={resume}
             download
             className="
               inline-block
