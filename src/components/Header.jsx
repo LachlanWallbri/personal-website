@@ -5,7 +5,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-gray-100 shadow-md z-50">
+    <header className="fixed top-0 left-0 w-full bg-[#fdfdfd] shadow-md z-50">
       <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         <div className="text-xl font-bold">My Portfolio</div>
 
@@ -50,7 +50,7 @@ export default function Header() {
 
       {/* Mobile dropdown */}
       {menuOpen && (
-        <ul className="md:hidden bg-gray-100 shadow-md px-6 py-4 space-y-4 text-gray-700 font-medium">
+        <ul className="md:hidden bg-[#fdfdfd] shadow-md px-6 py-4 space-y-4 text-gray-700 font-medium">
           <li>
             <a
               href="#splash"

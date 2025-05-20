@@ -48,10 +48,10 @@ export default function SkillsHoverBox() {
 
   const bubbleStyle = `
     text-xs sm:text-sm px-3 py-1
-    rounded-full bg-gray-100/10 text-white
+    rounded-full bg-[#fdfdfd]/10 text-white
     border border-white/20 backdrop-blur
     transition duration-200
-    hover:scale-105 hover:bg-gray-100/20
+    hover:scale-105 hover:bg-[#fdfdfd]/20
   `;
 
   const sharedSideStyle = `
@@ -72,7 +72,7 @@ export default function SkillsHoverBox() {
       strokeLinejoin="round"
       className="w-28 h-28 mt-16 opacity-90"
     >
-      <circle cx="12" cy="12" r="10" stroke="#103557" strokeWidth="1.5" />
+      <circle cx="12" cy="12" r="10" stroke="#1f749b" strokeWidth="1.5" />
       <line x1="12" y1="16" x2="12" y2="12" />
       <circle cx="12" cy="8" r="1" fill="#103557" />
     </svg>
@@ -112,7 +112,8 @@ export default function SkillsHoverBox() {
             : "flex-1 scale-100 transition-all duration-70"
         }`}
         style={{
-          background: "linear-gradient(135deg,rgb(20, 64, 104),rgb(0, 14, 37))",
+          background:
+            "linear-gradient(135deg,rgb(32, 81, 128),rgb(10, 30, 63))",
         }}
       >
         <h3 className="flex items-center gap-2 text-xl font-bold">

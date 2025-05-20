@@ -120,8 +120,8 @@ function ProjectCard({ title, year, description, media = [], github }) {
   const current = media[currentIndex];
 
   return (
-    <div className="bg-gray-100 rounded-lg shadow p-6 flex flex-col">
-      <div className="relative aspect-video w-full rounded-md overflow-hidden bg-gray-100">
+    <div className="bg-[#fdfdfd] rounded-lg shadow p-6 flex flex-col">
+      <div className="relative aspect-video w-full rounded-md overflow-hidden bg-[#fdfdfd]">
         {current.type === "image" ? (
           <img
             src={current.src}

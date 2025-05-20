@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-[#070e16] scroll-smooth relative z-[-20]">
+      <div className="min-h-screen bg-gray-900 scroll-smooth relative z-[-20]">
         <main className="pt-12 z-20">
           <LanternsBackground />
           {/* Splash Screen */}
