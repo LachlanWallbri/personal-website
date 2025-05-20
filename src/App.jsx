@@ -27,10 +27,9 @@ function App() {
         <section id="intro" className="max-w-4xl mx-auto py-16 px-4">
           <h2 className="text-3xl font-semibold mb-6 text-center">About Me</h2>
           <Intro />
-          <h2 className="text-3xl font-semibold mt-12 mb-6 text-center">
-            Skills
-          </h2>
-          {/* Skills */}
+        </section>
+        <section id="skills" className="w-screen px-0 overflow-hidden">
+          <h2 className="text-3xl font-semibold mb-6 text-center">Skills</h2>
           <SkillsHoverBox />
         </section>
         <section id="experience" className="max-w-4xl mx-auto py-16 px-4">
