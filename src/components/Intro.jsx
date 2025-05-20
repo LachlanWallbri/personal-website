@@ -97,18 +97,19 @@ export default function About() {
             href="/path/to/your-cv.pdf"
             download
             className="
-  inline-block
-  px-6 py-3
-  bg-gradient-to-r from-[#E25822] to-[#1E3A8A]
-  text-white
-  font-semibold
-  rounded-full
-  shadow-md
-  hover:from-[#D94F29] hover:to-[#1C356A]
-  transition
-  duration-300
-  ease-in-out
-"
+              inline-block
+              px-6 py-3
+              bg-gradient-to-r from-[#F88F1D] to-[#C72C48]
+              text-white
+              font-semibold
+              rounded-full
+              shadow-md
+              transition
+              duration-300
+              ease-in-out
+              hover:from-[#FFB347] hover:to-[#E03E52]
+              hover:shadow-lg
+            "
           >
             Download CV
           </a>

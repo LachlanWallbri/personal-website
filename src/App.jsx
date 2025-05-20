@@ -9,15 +9,16 @@ import Intro from "./components/Intro";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import SkillsHoverBox from "./components/Skills";
+import LanternsBackground from "./components/LanternsBg";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 scroll-smooth">
+    <div className="min-h-screen bg-gray-50 text-gray-900 scroll-smooth relative z-[-20]">
       <Header />
 
-      <main className="pt-12">
-        {" "}
+      <main className="pt-12 z-20">
         {/* to offset fixed header height */}
+        <LanternsBackground />
         <section
           id="splash"
           className="min-h-screen flex items-center justify-center"

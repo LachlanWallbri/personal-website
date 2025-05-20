@@ -66,15 +66,15 @@ export default function SkillsHoverBox() {
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2}
+      stroke="#1f749b"
+      strokeWidth={2.5}
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="w-32 h-32 mt-12 text-white opacity-20" // smaller size + more top margin
+      className="w-28 h-28 mt-16 opacity-90"
     >
-      <circle cx="12" cy="12" r="10" />
+      <circle cx="12" cy="12" r="10" stroke="#103557" strokeWidth="1.5" />
       <line x1="12" y1="16" x2="12" y2="12" />
-      <line x1="12" y1="8" x2="12.01" y2="8" />
+      <circle cx="12" cy="8" r="1" fill="#103557" />
     </svg>
   );
 
@@ -83,28 +83,37 @@ export default function SkillsHoverBox() {
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2}
+      stroke="#1f749b"
+      strokeWidth={2.5}
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="w-32 h-32 mt-12 text-white opacity-20" // same here
+      className="w-28 h-28 mt-16 opacity-90"
     >
-      <circle cx="12" cy="12" r="3" />
-      <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06a1.65 1.65 0 001.82.33h.09a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51h.09a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82v.09a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+      <circle cx="12" cy="12" r="3" stroke="#000816" strokeWidth="1.5" />
+      <path
+        d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06a1.65 1.65 0 001.82.33h.09a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51h.09a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82v.09a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"
+        stroke="#000816"
+        strokeWidth="1"
+        fill="#1f749b"
+        fillOpacity="0.1"
+      />
     </svg>
   );
 
   return (
-    <div className="relative w-screen max-w-full mx-0 mt-4 rounded-lg overflow-hidden shadow-lg select-none flex transition-all duration-500 min-h-[20rem]">
+    <div className="relative w-screen max-w-full mx-0 mt-4 overflow-hidden shadow-lg select-none flex transition-all duration-500 min-h-[20rem]">
       {/* Left - Professional */}
       <div
         onMouseEnter={() => setHoverSide("left")}
         onMouseLeave={() => setHoverSide(null)}
-        className={`group ${sharedSideStyle} bg-gradient-to-br from-gray-700 to-gray-900 ${
+        className={`group ${sharedSideStyle} ${
           hoverSide === "left"
             ? "flex-[3] scale-105 brightness-110 shadow-lg transition-all duration-500"
             : "flex-1 scale-100 transition-all duration-70"
         }`}
+        style={{
+          background: "linear-gradient(135deg,rgb(20, 64, 104),rgb(0, 14, 37))",
+        }}
       >
         <h3 className="flex items-center gap-2 text-xl font-bold">
           Professional Skills
@@ -151,11 +160,14 @@ export default function SkillsHoverBox() {
       <div
         onMouseEnter={() => setHoverSide("right")}
         onMouseLeave={() => setHoverSide(null)}
-        className={`group ${sharedSideStyle} bg-gradient-to-br from-gray-500 to-gray-700 ${
+        className={`group ${sharedSideStyle} ${
           hoverSide === "right"
             ? "flex-[3] scale-105 brightness-110 shadow-lg transition-all duration-500"
             : "flex-1 scale-100 transition-all duration-100"
         }`}
+        style={{
+          background: "linear-gradient(135deg, #1f749b, #103557)",
+        }}
       >
         <h3 className="flex items-center gap-2 text-xl font-bold">
           Technical Skills

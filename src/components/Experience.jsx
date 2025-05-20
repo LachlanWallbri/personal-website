@@ -61,8 +61,9 @@ const keywords = [
   "90%",
   "20%",
 ];
-
-const waveGradient = "linear-gradient(90deg, #3b82f6, #06b6d4, #3b82f6)";
+// linear-gradient(90deg,#C72C48,  #F88F1D, #C72C48)
+const waveGradient =
+  "linear-gradient(90deg,rgb(22, 59, 119), rgb(86, 133, 207),rgb(22, 59, 119))";
 
 const highlightKeywords = (text) => {
   const escapedKeywords = keywords.map((k) =>
@@ -107,7 +108,7 @@ const highlightKeywords = (text) => {
 
 export default function Experience() {
   return (
-    <div>
+    <div className="bg-white rounded-lg shadow p-8 max-w-4xl mx-auto space-y-8">
       <h2 className="text-3xl font-semibold mb-8 text-center">
         Work Experience
       </h2>
@@ -122,7 +123,8 @@ export default function Experience() {
             viewport={{ once: false, amount: 0.6 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
           >
-            <span className="absolute -left-4 top-2 w-4 h-4 bg-blue-600 rounded-full border-2 border-white"></span>
+            <span className="absolute -left-5 top-2 w-4 h-4 bg-[#0F172A] rounded-full border-2 border-white"></span>
+
             <h3 className="text-xl font-bold">
               {item.title} @ {item.company}
             </h3>
