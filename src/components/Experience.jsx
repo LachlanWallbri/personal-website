@@ -109,7 +109,7 @@ const highlightKeywords = (text) => {
 
 export default function Experience() {
   return (
-    <div className="bg-[#fdfdfd] rounded-lg shadow p-8 max-w-4xl mx-auto space-y-8">
+    <div className="bg-[#f5f9ff] rounded-lg shadow p-8 max-w-4xl mx-auto space-y-8">
       <div className="relative border-l-2 border-gray-300 ml-4">
         {timelineItems.map((item, index) => (
           <motion.div

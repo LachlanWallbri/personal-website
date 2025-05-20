@@ -12,7 +12,7 @@ export default function About() {
     (today < new Date(today.getFullYear(), 11, 9) ? 1 : 0);
 
   return (
-    <div className="bg-[#fdfdfd] rounded-lg shadow p-8 max-w-4xl mx-auto space-y-8">
+    <div className="bg-[#f5f9ff] rounded-lg shadow p-8 max-w-4xl mx-auto space-y-8">
       {/* Grid layout with fixed first column */}
       <div className="grid grid-cols-[auto_1fr] gap-8 items-start">
         {/* Column 1: Image + Icons */}

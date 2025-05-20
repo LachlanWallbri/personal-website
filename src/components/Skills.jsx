@@ -48,10 +48,10 @@ export default function SkillsHoverBox() {
 
   const bubbleStyle = `
     text-xs sm:text-sm px-3 py-1
-    rounded-full bg-[#fdfdfd]/10 text-white
+    rounded-full bg-[#f5f9ff]/10 text-white
     border border-white/20 backdrop-blur
     transition duration-200
-    hover:scale-105 hover:bg-[#fdfdfd]/20
+    hover:scale-105 hover:bg-[#f5f9ff]/20
   `;
 
   const sharedSideStyle = `

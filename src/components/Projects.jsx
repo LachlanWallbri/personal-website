@@ -41,7 +41,7 @@ const projectsData = [
       { type: "video", videoId: "dQw4w9WgXcQ" },
       { type: "image", src: "/images/gamma2.png" },
     ],
-    github: "https://github.com/yourusername/project-gamma",
+    github: "https://github.com/LachlanWallbri",
   },
 ];
 
@@ -120,8 +120,8 @@ function ProjectCard({ title, year, description, media = [], github }) {
   const current = media[currentIndex];
 
   return (
-    <div className="bg-[#fdfdfd] rounded-lg shadow p-6 flex flex-col">
-      <div className="relative aspect-video w-full rounded-md overflow-hidden bg-[#fdfdfd]">
+    <div className="bg-[#f5f9ff] rounded-lg shadow p-6 flex flex-col">
+      <div className="relative aspect-video w-full rounded-md overflow-hidden bg-[#f5f9ff]">
         {current.type === "image" ? (
           <img
             src={current.src}
