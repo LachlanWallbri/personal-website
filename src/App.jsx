@@ -14,9 +14,8 @@ import LanternsBackground from "./components/LanternsBg";
 function App() {
   return (
     <>
+      <Header />
       <div className="min-h-screen bg-gray-50 text-gray-900 scroll-smooth relative z-[-20]">
-        <Header />
-
         <main className="pt-12 z-20">
           {/* to offset fixed header height */}
           <LanternsBackground />
@@ -32,7 +31,7 @@ function App() {
             </h2>
             <Intro />
           </section>
-          <section id="skills" className="w-screen px-0 overflow-hidden">
+          <section id="skills" className="w-full px-0 overflow-hidden">
             <h2 className="text-3xl font-semibold mb-6 text-center">Skills</h2>
             <SkillsHoverBox />
           </section>

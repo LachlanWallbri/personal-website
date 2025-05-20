@@ -123,7 +123,7 @@ export default function Experience() {
             viewport={{ once: false, amount: 0.6 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
           >
-            <span className="absolute -left-5 top-2 w-4 h-4 bg-[#0F172A] rounded-full border-2 border-white"></span>
+            <span className="absolute -left-5 top-2 w-4 h-4 bg-[#102B5A] rounded-full border-2 border-white"></span>
 
             <h3 className="text-xl font-bold">
               {item.title} @ {item.company}

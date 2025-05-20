@@ -26,7 +26,7 @@ export default function LanternsBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none z-[-10]">
+    <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-[-10]">
       {lanterns.map((lantern) => (
         <img
           key={lantern.id}

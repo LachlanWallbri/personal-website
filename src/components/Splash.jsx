@@ -8,7 +8,7 @@ export default function Splash() {
     <div className="relative w-full h-screen flex flex-col items-center justify-center px-4 text-center overflow-hidden">
       {/* Video background */}
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none"
         src={videobg}
         autoPlay
         muted
@@ -17,7 +17,7 @@ export default function Splash() {
       />
 
       <motion.h1
-        className="text-5xl font-extrabold text-white drop-shadow-lg z-20"
+        className="text-5xl font-extrabold text-white drop-shadow-lg"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
@@ -26,7 +26,7 @@ export default function Splash() {
       </motion.h1>
 
       <motion.p
-        className="text-xl text-white drop-shadow-md z-10"
+        className="text-xl text-white drop-shadow-md"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5, ease: "easeOut" }}

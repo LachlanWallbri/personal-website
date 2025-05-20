@@ -22,6 +22,11 @@ export default function Header() {
             </a>
           </li>
           <li>
+            <a href="#skills" className="hover:text-blue-600">
+              Skills
+            </a>
+          </li>
+          <li>
             <a href="#experience" className="hover:text-blue-600">
               Experience
             </a>
@@ -62,6 +67,15 @@ export default function Header() {
               className="block hover:text-blue-600"
             >
               Intro
+            </a>
+          </li>
+          <li>
+            <a
+              href="#skills"
+              onClick={() => setMenuOpen(false)}
+              className="block hover:text-blue-600"
+            >
+              Skills
             </a>
           </li>
           <li>
