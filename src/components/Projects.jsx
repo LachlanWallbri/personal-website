@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 
+// Tree assets
 import leaf from "../assets/leaf2.svg";
 import trunk from "../assets/trunk.svg";
 import pot from "../assets/pot.svg";
@@ -21,6 +22,9 @@ import ros2project4 from "../assets/ros2/puck.JPEG";
 
 // robo arm
 import manipulator1 from "../assets/manipulator/robotarm.png";
+
+// State estimation
+import state1 from "../assets/state/bias.png";
 
 const projectsData = [
   {
@@ -58,15 +62,6 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "SLAM via Stochastic State Estimation",
-    year: 2024,
-    description:
-      "Simulated localization of a robot using stochastic state estimation techniques and sensor fusion to navigate unknown environments.",
-    media: [{ type: "image", src: "/images/slam.png" }],
-    tools: ["MATLAB", "Sensor Fusion", "Stochastic Estimation", "Simulation"],
-  },
-  {
-    id: 4,
     title: "Robot Manipulator Puzzle Solver",
     year: 2024,
     description:
@@ -74,7 +69,18 @@ const projectsData = [
     media: [{ type: "image", src: manipulator1 }],
     tools: ["MATLAB", "Computer Vision", "Heuristic AI", "Control Systems"],
   },
-
+  {
+    id: 4,
+    title: "SLAM via Stochastic State Estimation",
+    year: 2024,
+    description:
+      "Simulated localization of a robot using stochastic state estimation techniques and sensor fusion to navigate unknown environments.",
+    media: [
+      { type: "video", videoId: "GAMB-6VYB-k", start: 169 },
+      { type: "image", src: state1 },
+    ], // Start at 2:49
+    tools: ["MATLAB", "Sensor Fusion", "Stochastic Estimation", "Simulation"],
+  },
   {
     id: 5,
     title: "ROS2 System Integration and Annotation",
@@ -125,11 +131,11 @@ export default function Projects() {
     <div>
       <div className="flex flex-col max-w-7xl mx-auto px-4 pb-0">
         {/* Bush */}
-        <img
+        {/* <img
           src={bush}
           alt="Tree-top"
-          className="w-[250px] object-contain mb-[-45px] mx-auto"
-        />
+          className="w-[850px] object-contain mb-[-600px] mx-auto"
+        /> */}
 
         {projectsData.map(({ id, ...rest }, index) => (
           <div key={id} className="flex flex-col items-center w-full">
@@ -147,7 +153,7 @@ export default function Projects() {
                       : "left-full -ml-6"
                   }`}
                 >
-                  <div className="w-10 h-1 bg-green-700" />
+                  <div className="w-10 h-1 bg-green-700 overflow-hidden" />
                   <img
                     src={leaf}
                     alt="Leaf"
@@ -169,15 +175,18 @@ export default function Projects() {
               src={trunk}
               alt="Trunk"
               className="h-[100px] object-contain z-5"
+              style={{
+                transform: index % 2 === 0 ? "rotate(0deg)" : "scaleX(-1)",
+              }}
             />
           </div>
         ))}
         {/* Pot */}
-        <img
+        {/* <img
           src={pot}
           alt="Potplant"
           className="w-[150px] object-contain mt-[-72px] mx-auto"
-        />
+        /> */}
       </div>
     </div>
   );
@@ -207,7 +216,9 @@ function ProjectCard({ title, year, description, media = [], github, tools }) {
           />
         ) : (
           <iframe
-            src={`https://www.youtube.com/embed/${current.videoId}?mute=1`}
+            src={`https://www.youtube.com/embed/${current.videoId}?mute=1${
+              current.start ? `&start=${current.start}` : ""
+            }`}
             title={`${title} demo video`}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
