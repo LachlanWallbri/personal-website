@@ -4,7 +4,7 @@ const timelineItems = [
   {
     title: "Software Engineer Intern",
     company: "Saber Astronautics",
-    date: "January 2025 – Present",
+    date: "January 2025 – June 2025",
     description: [
       "Deployed AWS-based cloud infrastructure for satellite telemetry capture, processing, and delegation using Pulumi (IaC) and Python.",
       "Translated Docker Compose into a Kubernetes cluster and set up a local development environment with Minikube.",
@@ -109,40 +109,39 @@ const highlightKeywords = (text) => {
 
 export default function Experience() {
   return (
-    <div className="bg-[#f5f9ff] rounded-lg shadow p-8 max-w-4xl mx-auto space-y-8">
-      <div className="relative border-l-2 border-gray-300 ml-4">
-        {timelineItems.map((item, index) => (
-          <motion.div
-            key={item.title}
-            className="mb-10 ml-6 relative"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.6 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-          >
-            <span className="absolute -left-5 top-2 w-4 h-4 bg-[#102B5A] rounded-full border-2 border-white"></span>
+    <div className="max-w-4xl mx-auto space-y-8">
+      {timelineItems.map((item, index) => (
+        <motion.div
+          key={item.title}
+          className="relative bg-[#f5f9ff] rounded-lg shadow p-6 border-l-4 border-ray-900 pl-8"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.6 }}
+          transition={{ duration: 0.6, delay: index * 0.2 }}
+        >
+          {/* Timeline dot */}
+          <span className="absolute -left-8 top-9 w-4 h-4 bg-[#e64b25] rounded-full border-2 border-white"></span>
 
-            <h3 className="text-xl font-bold">
-              {item.title} @ {item.company}
-            </h3>
-            <time className="text-sm text-gray-500">{item.date}</time>
-            <ul className="list-disc pl-5 text-sm text-gray-700 mt-2">
-              {item.description.map((point, idx) => (
-                <motion.li
-                  key={idx}
-                  className="mb-3" // increased gap between bullet points
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false, amount: 0.6 }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                >
-                  {highlightKeywords(point)}
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-        ))}
-      </div>
+          <h3 className="text-xl font-bold">
+            {item.title} @ {item.company}
+          </h3>
+          <time className="text-sm text-gray-500">{item.date}</time>
+          <ul className="list-disc pl-5 text-sm text-gray-700 mt-2">
+            {item.description.map((point, idx) => (
+              <motion.li
+                key={idx}
+                className="mb-3"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.6 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+              >
+                {highlightKeywords(point)}
+              </motion.li>
+            ))}
+          </ul>
+        </motion.div>
+      ))}
     </div>
   );
 }

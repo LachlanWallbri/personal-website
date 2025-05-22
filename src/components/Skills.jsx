@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 
-import img from "../assets/react.svg";
-
 export default function SkillsHoverBox() {
   const [hoverSide, setHoverSide] = useState(null);
   const [showBubbles, setShowBubbles] = useState(null);
@@ -47,7 +45,7 @@ export default function SkillsHoverBox() {
   };
 
   const bubbleStyle = `
-    text-xs sm:text-sm px-3 py-1
+    text-xs sm:text-base px-3 py-1
     rounded-full bg-[#f5f9ff]/10 text-white
     border border-white/20 backdrop-blur
     transition duration-200
@@ -66,15 +64,15 @@ export default function SkillsHoverBox() {
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      stroke="#1f749b"
+      stroke="white"
       strokeWidth={2.5}
       strokeLinecap="round"
       strokeLinejoin="round"
       className="w-28 h-28 mt-16 opacity-90"
     >
-      <circle cx="12" cy="12" r="10" stroke="#1f749b" strokeWidth="1.5" />
+      <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="1.5" />
       <line x1="12" y1="16" x2="12" y2="12" />
-      <circle cx="12" cy="8" r="1" fill="#103557" />
+      <circle cx="12" cy="8" r="1" fill="white" />
     </svg>
   );
 
@@ -89,19 +87,19 @@ export default function SkillsHoverBox() {
       strokeLinejoin="round"
       className="w-28 h-28 mt-16 opacity-90"
     >
-      <circle cx="12" cy="12" r="3" stroke="#000816" strokeWidth="1.5" />
+      <circle cx="12" cy="12" r="3" stroke="white" strokeWidth="1.5" />
       <path
         d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06a1.65 1.65 0 001.82.33h.09a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51h.09a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82v.09a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"
-        stroke="#000816"
+        stroke="white"
         strokeWidth="1"
-        fill="#1f749b"
-        fillOpacity="0.1"
+        fill="white"
+        fillOpacity="0"
       />
     </svg>
   );
 
   return (
-    <div className="relative w-screen max-w-full mx-0 mt-4 overflow-hidden shadow-lg select-none flex transition-all duration-500 min-h-[20rem]">
+    <div className="relative w-screen max-w-7xl mx-auto mx-0 mt-4 overflow-hidden select-none flex transition-all duration-500 min-h-[20rem]">
       {/* Left - Professional */}
       <div
         onMouseEnter={() => setHoverSide("left")}
@@ -111,26 +109,21 @@ export default function SkillsHoverBox() {
             ? "flex-[3] scale-105 brightness-110 shadow-lg transition-all duration-500"
             : "flex-1 scale-100 transition-all duration-70"
         }`}
-        style={{
-          background:
-            "linear-gradient(135deg,rgb(32, 81, 128),rgb(10, 30, 63))",
-        }}
       >
         <h3 className="flex items-center gap-2 text-xl font-bold">
           Professional Skills
         </h3>
 
-        <p className="text-xs text-gray-300 mt-1 italic opacity-70 group-hover:opacity-0 transition-opacity duration-300">
+        <p className="text-xs text-gray-300 mt-1 italic opacity-80 group-hover:opacity-0 transition-opacity duration-300">
           Hover to reveal skills
         </p>
 
-        {/* Show image only if NOT hovered on left */}
         <div
           className={`absolute inset-0 flex items-center justify-center pointer-events-none select-none
-                      transition-opacity duration-300
-                      ${hoverSide === "left" ? "opacity-0" : "opacity-30"}
-                      z-10
-                    `}
+              transition-opacity duration-300
+              ${hoverSide === "left" ? "opacity-0" : "opacity-70"}
+              z-10
+          `}
         >
           <InfoIcon />
         </div>
@@ -166,9 +159,6 @@ export default function SkillsHoverBox() {
             ? "flex-[3] scale-105 brightness-110 shadow-lg transition-all duration-500"
             : "flex-1 scale-100 transition-all duration-100"
         }`}
-        style={{
-          background: "linear-gradient(135deg, #1f749b, #103557)",
-        }}
       >
         <h3 className="flex items-center gap-2 text-xl font-bold">
           Technical Skills
@@ -177,11 +167,10 @@ export default function SkillsHoverBox() {
           Hover to reveal skills
         </p>
 
-        {/* Show image only if NOT hovered on right */}
         <div
           className={`absolute inset-0 flex items-center justify-center pointer-events-none select-none z-10
-                      transition-opacity duration-300
-                      ${hoverSide === "right" ? "opacity-0" : "opacity-30"}
+                        transition-opacity duration-300
+                        ${hoverSide === "right" ? "opacity-0" : "opacity-70"}
                     `}
         >
           <GearIcon />

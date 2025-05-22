@@ -1,7 +1,8 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+
 import "./App.css";
+
+import fireplace from "./assets/fireplace.mp4";
 
 import Header from "./components/Header";
 import Splash from "./components/Splash";
@@ -16,7 +17,10 @@ function App() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-gray-900 scroll-smooth relative z-[-20]">
+      <div
+        className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800
+ scroll-smooth relative z-[-20]"
+      >
         <main className="pt-12 z-20">
           <LanternsBackground />
           {/* Splash Screen */}
@@ -35,10 +39,23 @@ function App() {
           </section>
           {/* Skills Section */}
           <section id="skills" className="w-full px-0 overflow-hidden">
-            <h2 className="text-3xl font-semibold mb-6 text-center text-white">
-              Skills
-            </h2>
-            <SkillsHoverBox />
+            <div className="relative w-screen max-w-full mx-0 mt-4 overflow-hidden shadow-lg select-none min-h-[50rem] flex flex-col items-center justify-center">
+              {/* 🔥 Background Video */}
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute top-0 left-0 w-full h-full object-cover z-0 wavy-clip"
+              >
+                <source src={fireplace} type="video/mp4" />
+              </video>
+
+              <h2 className="text-3xl font-semibold mb-6 text-center text-white z-10">
+                Skills
+              </h2>
+              <SkillsHoverBox />
+            </div>
           </section>
           {/* Experience Section */}
           <section id="experience" className="max-w-4xl mx-auto py-16 px-4">
