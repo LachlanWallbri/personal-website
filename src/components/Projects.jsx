@@ -11,12 +11,16 @@ import capstone1 from "../assets/capstone/graph.jpg";
 import capstone2 from "../assets/capstone/stats.jpg";
 
 // Website images
+import website1 from "../assets/website/Skills.png";
 
 // ROS2 project image
 import ros2project1 from "../assets/ros2/CV pucks.png";
 import ros2project2 from "../assets/ros2/CV pucks2.png";
 import ros2project3 from "../assets/ros2/mapping.PNG";
 import ros2project4 from "../assets/ros2/puck.JPEG";
+
+// robo arm
+import manipulator1 from "../assets/manipulator/robotarm.png";
 
 const projectsData = [
   {
@@ -48,24 +52,46 @@ const projectsData = [
     year: 2025,
     description:
       "A dynamic portfolio website showcasing personal projects, professional experience, and interactive UI/UX elements built with React, Framer Motion, and TailwindCSS.",
-    media: [
-      { type: "image", src: "/images/portfolio1.png" },
-      { type: "image", src: "/images/portfolio2.png" },
-    ],
-    github: "https://github.com/LachlanWallbri/portfolio-site",
+    media: [{ type: "image", src: website1 }],
+    github: "https://github.com/LachlanWallbri/personal-website",
     tools: ["React", "TailwindCSS", "Framer Motion", "JavaScript", "Git"],
   },
   {
     id: 3,
+    title: "SLAM via Stochastic State Estimation",
+    year: 2024,
+    description:
+      "Simulated localization of a robot using stochastic state estimation techniques and sensor fusion to navigate unknown environments.",
+    media: [{ type: "image", src: "/images/slam.png" }],
+    tools: ["MATLAB", "Sensor Fusion", "Stochastic Estimation", "Simulation"],
+  },
+  {
+    id: 4,
     title: "Robot Manipulator Puzzle Solver",
     year: 2024,
     description:
       "A robotics project using a 6-axis manipulator and computer vision to autonomously solve a color puzzle game board with error handling and robustness.",
-    media: [{ type: "image", src: "/images/manipulator1.png" }],
+    media: [{ type: "image", src: manipulator1 }],
     tools: ["MATLAB", "Computer Vision", "Heuristic AI", "Control Systems"],
   },
+
   {
-    id: 4,
+    id: 5,
+    title: "ROS2 System Integration and Annotation",
+    year: 2023,
+    description:
+      "Used ROS2 to integrate vision, navigation, and mapping systems to detect colored markers and annotate a robot-generated map.",
+    media: [
+      { type: "video", videoId: "637lcjfiW7U" },
+      { type: "image", src: ros2project3 },
+      { type: "image", src: ros2project4 },
+      { type: "image", src: ros2project1 },
+      { type: "image", src: ros2project2 },
+    ],
+    tools: ["ROS2", "Computer Vision", "Color Detection", "SLAM"],
+  },
+  {
+    id: 6,
     title: "Maze Mapping and Traversal Robot",
     year: 2023,
     description:
@@ -84,39 +110,12 @@ const projectsData = [
     ],
   },
   {
-    id: 5,
-    title: "ROS2 System Integration and Annotation",
-    year: 2023,
-    description:
-      "Used ROS2 to integrate vision, navigation, and mapping systems to detect colored markers and annotate a robot-generated map.",
-    media: [
-      { type: "video", videoId: "637lcjfiW7U" },
-      { type: "image", src: ros2project3 },
-      { type: "image", src: ros2project4 },
-      { type: "image", src: ros2project1 },
-      { type: "image", src: ros2project2 },
-    ],
-    tools: ["ROS2", "Computer Vision", "Color Detection", "SLAM"],
-  },
-  {
-    id: 6,
-    title: "SLAM via Stochastic State Estimation",
-    year: 2024,
-    description:
-      "Simulated localization of a robot using stochastic state estimation techniques and sensor fusion to navigate unknown environments.",
-    media: [{ type: "image", src: "/images/slam.png" }],
-    tools: ["MATLAB", "Sensor Fusion", "Stochastic Estimation", "Simulation"],
-  },
-  {
     id: 7,
     title: "PLC-Based Multithreaded Robot System",
     year: 2024,
     description:
       "Developed a robust PLC control system with multithreading and watchdog architecture. Interfaced with motion systems and sensors including GPS, LiDAR, encoders, and inertial sensors.",
-    media: [
-      { type: "video", videoId: "tHfo-cAUuUU" },
-      { type: "image", src: "/images/plcrobot.png" },
-    ],
+    media: [{ type: "video", videoId: "tHfo-cAUuUU" }],
     tools: ["PLC", "Multithreading", "GPS", "LiDAR", "Encoders", "OO Design"],
   },
 ];
