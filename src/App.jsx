@@ -39,7 +39,7 @@ function App() {
           </section>
           {/* Skills Section */}
           <section id="skills" className="w-full px-0 overflow-hidden">
-            <div className="relative w-screen max-w-full mx-0 mt-4 overflow-hidden shadow-lg select-none min-h-[50rem] flex flex-col items-center justify-center">
+            <div className="relative w-screen max-w-full mx-0 mt-4 overflow-hidden shadow-lg select-none min-h-[40rem] flex flex-col items-center justify-center">
               {/* 🔥 Background Video */}
               <video
                 autoPlay

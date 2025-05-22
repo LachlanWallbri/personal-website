@@ -1,4 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 const timelineItems = [
   {
@@ -110,38 +112,52 @@ const highlightKeywords = (text) => {
 export default function Experience() {
   return (
     <div className="max-w-4xl mx-auto space-y-8">
-      {timelineItems.map((item, index) => (
-        <motion.div
-          key={item.title}
-          className="relative bg-[#f5f9ff] rounded-lg shadow p-6 border-l-4 border-ray-900 pl-8"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.6 }}
-          transition={{ duration: 0.6, delay: index * 0.2 }}
-        >
-          {/* Timeline dot */}
-          <span className="absolute -left-8 top-9 w-4 h-4 bg-[#e64b25] rounded-full border-2 border-white"></span>
+      {timelineItems.map((item, index) => {
+        const controls = useAnimation();
+        const [ref, inView] = useInView({ threshold: 0.5 });
 
-          <h3 className="text-xl font-bold">
-            {item.title} @ {item.company}
-          </h3>
-          <time className="text-sm text-gray-500">{item.date}</time>
-          <ul className="list-disc pl-5 text-sm text-gray-700 mt-2">
-            {item.description.map((point, idx) => (
-              <motion.li
-                key={idx}
-                className="mb-3"
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.6 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-              >
-                {highlightKeywords(point)}
-              </motion.li>
-            ))}
-          </ul>
-        </motion.div>
-      ))}
+        useEffect(() => {
+          if (inView) {
+            controls.start({ opacity: 1, y: 0 });
+          } else {
+            controls.start({ opacity: 0, y: 30 });
+          }
+        }, [controls, inView]);
+
+        return (
+          <motion.div
+            ref={ref}
+            key={item.title}
+            className="relative rounded-lg shadow-md p-6 pl-8"
+            style={{
+              backgroundImage:
+                "linear-gradient(to bottom right,rgb(215, 229, 250) 0%, white 25%, white 80%,rgb(252, 184, 167) 100%)",
+            }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={controls}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+          >
+            <h3 className="text-xl font-bold">
+              {item.title} @ {item.company}
+            </h3>
+            <time className="text-sm text-gray-500">{item.date}</time>
+            <ul className="list-disc pl-5 text-sm text-gray-700 mt-2">
+              {item.description.map((point, idx) => (
+                <motion.li
+                  key={idx}
+                  className="mb-3"
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.6 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                >
+                  {highlightKeywords(point)}
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        );
+      })}
     </div>
   );
 }
