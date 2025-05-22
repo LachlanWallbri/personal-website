@@ -6,42 +6,118 @@ import trunk from "../assets/trunk.svg";
 import pot from "../assets/pot.svg";
 import bush from "../assets/bush.svg";
 
-import lachlan from "../assets/Lachlan.png";
+// Capstone images
+import capstone1 from "../assets/capstone/graph.jpg";
+import capstone2 from "../assets/capstone/stats.jpg";
+
+// Website images
+
+// ROS2 project image
+import ros2project1 from "../assets/ros2/CV pucks.png";
+import ros2project2 from "../assets/ros2/CV pucks2.png";
+import ros2project3 from "../assets/ros2/mapping.PNG";
+import ros2project4 from "../assets/ros2/puck.JPEG";
 
 const projectsData = [
   {
     id: 1,
-    title: "Project Alpha",
-    year: 2023,
-    description: "A web app that does amazing things.",
+    title: "Capstone: Industrial Delivery Robot Reverse Engineering",
+    year: 2024,
+    description:
+      "SCRUM-based team project to reverse engineer a Pudutech Bellabot with closed-source software for teleoperation and research. Developed a multithreaded backend control system, interfaced with LiDAR, cameras, CANBus and decompiled firmware, and delivered stretch goals ahead of schedule.",
     media: [
-      { type: "image", src: lachlan },
-      { type: "image", src: "../assets/Lachlan.png" },
-      { type: "image", src: "/images/alpha3.png" },
+      { type: "video", videoId: "zKGxhQgWT9w" },
+      { type: "video", videoId: "pmc2IJWZwWY" },
+      { type: "image", src: capstone1 },
+      { type: "image", src: capstone2 },
     ],
-    github: "https://github.com/yourusername/project-alpha",
+    github: "https://github.com/LachlanWallbri/BellaBot",
+    tools: [
+      "Java",
+      "Android SDK",
+      "Object-Oriented Programming",
+      "TCP",
+      "CANBus",
+      "Git",
+      "SCRUM",
+    ],
   },
   {
     id: 2,
-    title: "Project Beta",
-    year: 2022,
-    description: "Mobile app focused on user experience.",
+    title: "Personal Portfolio & Resume Website",
+    year: 2025,
+    description:
+      "A dynamic portfolio website showcasing personal projects, professional experience, and interactive UI/UX elements built with React, Framer Motion, and TailwindCSS.",
     media: [
-      { type: "image", src: "/images/beta1.png" },
-      { type: "image", src: "/images/beta2.png" },
+      { type: "image", src: "/images/portfolio1.png" },
+      { type: "image", src: "/images/portfolio2.png" },
     ],
+    github: "https://github.com/LachlanWallbri/portfolio-site",
+    tools: ["React", "TailwindCSS", "Framer Motion", "JavaScript", "Git"],
   },
   {
     id: 3,
-    title: "Project Gamma",
+    title: "Robot Manipulator Puzzle Solver",
     year: 2024,
-    description: "Exciting project with an embedded demo video.",
+    description:
+      "A robotics project using a 6-axis manipulator and computer vision to autonomously solve a color puzzle game board with error handling and robustness.",
+    media: [{ type: "image", src: "/images/manipulator1.png" }],
+    tools: ["MATLAB", "Computer Vision", "Heuristic AI", "Control Systems"],
+  },
+  {
+    id: 4,
+    title: "Maze Mapping and Traversal Robot",
+    year: 2023,
+    description:
+      "Designed and programmed a robot to map and solve a maze using vision-based SLAM and heuristic pathfinding. Built the chassis in CAD and implemented localization with Arduino sensors.",
     media: [
-      { type: "image", src: "/images/gamma1.png" },
-      { type: "video", videoId: "dQw4w9WgXcQ" },
-      { type: "image", src: "/images/gamma2.png" },
+      { type: "video", videoId: "fO4dUvNimfs" },
+      { type: "Video", videoId: "NJ17OA670b8" },
+      { type: "video", videoId: "SBM2KD9x6Qs" },
     ],
-    github: "https://github.com/LachlanWallbri",
+    tools: [
+      "Arduino Mega",
+      "Computer Vision",
+      "SLAM",
+      "CAD",
+      "Pathfinding Algorithms",
+    ],
+  },
+  {
+    id: 5,
+    title: "ROS2 System Integration and Annotation",
+    year: 2023,
+    description:
+      "Used ROS2 to integrate vision, navigation, and mapping systems to detect colored markers and annotate a robot-generated map.",
+    media: [
+      { type: "video", videoId: "637lcjfiW7U" },
+      { type: "image", src: ros2project3 },
+      { type: "image", src: ros2project4 },
+      { type: "image", src: ros2project1 },
+      { type: "image", src: ros2project2 },
+    ],
+    tools: ["ROS2", "Computer Vision", "Color Detection", "SLAM"],
+  },
+  {
+    id: 6,
+    title: "SLAM via Stochastic State Estimation",
+    year: 2024,
+    description:
+      "Simulated localization of a robot using stochastic state estimation techniques and sensor fusion to navigate unknown environments.",
+    media: [{ type: "image", src: "/images/slam.png" }],
+    tools: ["MATLAB", "Sensor Fusion", "Stochastic Estimation", "Simulation"],
+  },
+  {
+    id: 7,
+    title: "PLC-Based Multithreaded Robot System",
+    year: 2024,
+    description:
+      "Developed a robust PLC control system with multithreading and watchdog architecture. Interfaced with motion systems and sensors including GPS, LiDAR, encoders, and inertial sensors.",
+    media: [
+      { type: "video", videoId: "tHfo-cAUuUU" },
+      { type: "image", src: "/images/plcrobot.png" },
+    ],
+    tools: ["PLC", "Multithreading", "GPS", "LiDAR", "Encoders", "OO Design"],
   },
 ];
 
@@ -84,11 +160,12 @@ export default function Projects() {
                   />
                 </div>
 
+                {/* 👇 Pass 'tools' to ProjectCard */}
                 <ProjectCard {...rest} />
               </div>
             </div>
 
-            {/* Trunk (only between projects) */}
+            {/* Trunk */}
             <img
               src={trunk}
               alt="Trunk"
@@ -107,7 +184,7 @@ export default function Projects() {
   );
 }
 
-function ProjectCard({ title, year, description, media = [], github }) {
+function ProjectCard({ title, year, description, media = [], github, tools }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevMedia = () => {
@@ -121,17 +198,17 @@ function ProjectCard({ title, year, description, media = [], github }) {
 
   return (
     <div className="bg-[#f5f9ff] rounded-lg shadow p-6 flex flex-col">
-      <div className="relative aspect-video w-full rounded-md overflow-hidden bg-[#f5f9ff]">
+      <div className="relative aspect-video w-full rounded-md overflow-hidden bg-gray-900">
         {current.type === "image" ? (
           <img
             src={current.src}
             alt={`${title} media ${currentIndex + 1}`}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
             loading="lazy"
           />
         ) : (
           <iframe
-            src={`https://www.youtube.com/embed/${current.videoId}`}
+            src={`https://www.youtube.com/embed/${current.videoId}?mute=1`}
             title={`${title} demo video`}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -164,6 +241,20 @@ function ProjectCard({ title, year, description, media = [], github }) {
       <h3 className="text-xl font-bold">{title}</h3>
       <p className="text-sm text-gray-500 mb-2">{year}</p>
       <p className="text-gray-700 flex-grow">{description}</p>
+
+      {/* 🧪 Tool Bubbles */}
+      {tools?.length > 0 && (
+        <div className="flex flex-wrap gap-2 mt-2">
+          {tools.map((tool, i) => (
+            <span
+              key={i}
+              className="px-3 py-1 text-sm rounded-full bg-gradient-to-br from-green-200 to-green-400 text-green-900 font-medium shadow-sm"
+            >
+              {tool}
+            </span>
+          ))}
+        </div>
+      )}
 
       {github && (
         <a
