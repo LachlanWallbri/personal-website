@@ -88,22 +88,31 @@ export default function About() {
       {/* Row 2: Description + Download CV */}
       <div>
         <p className="text-gray-700 mb-4 text-justify">
-          I am a passionate software developer with a unique blend of expertise
-          in mechatronics and computer science. My background in mechatronics
-          has equipped me with a deep understanding of the integration between
-          mechanical, electronic, and software systems, allowing me to approach
-          problem-solving from a multidisciplinary perspective. Combining this
-          with my computer science knowledge, I specialize in designing and
-          developing clean, scalable, and user-friendly applications for both
-          web and mobile platforms.
+          I'm a Mechatronics and Computer Science student with a strong focus on
+          robotics, control systems, computer networks, and scalable software
+          infrastructure. My work spans autonomy, control systems, networking
+          and embedded system integration, including SLAM pipelines, heuristic
+          pathfinding, multithreaded control loops, and cloud-native
+          architectures.
           <br />
-          <br />I thrive on building innovative digital experiences that not
-          only meet user needs but also leverage the seamless interaction
-          between hardware and software. Whether it’s developing robust backend
-          systems, crafting intuitive front-end interfaces, or integrating IoT
-          and embedded systems, I focus on creating solutions that are reliable,
-          efficient, and easy to maintain. My goal is to deliver impactful
-          technology that enhances everyday life and drives business success.
+          <br />
+          Throughout university, I have built and integrated systems using ROS2,
+          vision-based interfaces, adaptive control strategies, and networked
+          teleoperation on reverse-engineered platforms. These projects often
+          required fusing sensor data, coordinating distributed components, and
+          making real-time decisions in noisy, dynamic conditions. I’m
+          especially interested in the intersection of perception, control, and
+          communication at a systems level, and the control systems that join
+          these elements.
+          <br />
+          <br />
+          Professionally, I’ve worked on AWS infrastructure, Kubernetes
+          deployments, and hardware-software integration for space systems at
+          Saber Astronautics. In this role, I have worked on network
+          communication for autonomous platforms and real-time data flow between
+          physical and cloud-based systems. My goal is to design and implement
+          systems that are robust, maintainable, and performant, whether in
+          autonomous robotics, cloud environments, or experimental platforms.
         </p>
 
         <div className="text-center">

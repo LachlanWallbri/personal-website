@@ -6,4 +6,10 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+  z-index: 0;
+  pointer-events: none; /* prevents blocking child content */
+}
+
+#root > * {
+  pointer-events: auto; /* allows actual app content to be interactive */
 }

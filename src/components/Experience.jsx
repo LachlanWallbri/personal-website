@@ -12,7 +12,7 @@ const timelineItems = [
       "Translated Docker Compose into a Kubernetes cluster and set up a local development environment with Minikube.",
       "Integrated hardware and developed network protocols for client projects, including potential deployment to the International Space Station.",
       "Interfaced with sensors using UART, SPI, and I2C protocols; supported NMEA and ICMP packet types.",
-      "Ported sensor libraries into Python for compatibility with a newly released FPGA via its custom API.",
+      "Translated sensor libraries into Python for compatibility with a newly released FPGA via its custom API.",
     ],
   },
   {
@@ -20,9 +20,9 @@ const timelineItems = [
     company: "Industrial Engraving Solutions",
     date: "November 2023",
     description: [
-      "Set up 3D printers and custom workstation environments.",
+      "Set up 3D printers and custom workstation environments for engineers.",
       "Trained staff in machine operation and maintenance.",
-      "Designed robust replacement parts using CAD, reducing part costs by over 90%.",
+      "Designed robust replacement parts for a TROTEC laser cutter using CAD, reducing part costs by over 90%.",
     ],
   },
   {

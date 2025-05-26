@@ -33,7 +33,7 @@ export default function Header() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="text-xl font-bold">My Portfolio</div>
+        <div className="text-xl font-bold">Lachlan Wallbridge</div>
 
         {/* Desktop nav */}
         <ul className="hidden md:flex space-x-6 text-gray-700 font-medium">

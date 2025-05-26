@@ -1,8 +1,113 @@
 import { useState, useEffect } from "react";
 
+import {
+  FaPython,
+  FaJava,
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaGit,
+  FaAws,
+  FaLinux,
+  FaDocker,
+  FaCuttlefish, // for C
+  FaRaspberryPi,
+  FaAndroid,
+  FaNetworkWired,
+} from "react-icons/fa";
+import {
+  SiCplusplus,
+  SiKotlin,
+  SiOpencv,
+  SiArduino,
+  SiEspressif,
+  SiPulumi,
+  SiKubernetes,
+  SiRos,
+  SiCypress,
+  SiDassaultsystemes,
+} from "react-icons/si";
+import { PiMathOperationsFill } from "react-icons/pi";
+import { GiDeliveryDrone } from "react-icons/gi";
+
 export default function SkillsHoverBox() {
   const [hoverSide, setHoverSide] = useState(null);
   const [showBubbles, setShowBubbles] = useState(null);
+
+  const skillMap = {
+    C: <FaCuttlefish className="text-blue-400" />,
+    "C++": <SiCplusplus className="text-blue-400" />,
+    Java: <FaJava className="text-red-600" />,
+    Python: <FaPython className="text-yellow-400" />,
+    MATLAB: <PiMathOperationsFill className="text-orange-400" />,
+    Shell: <FaLinux className="text-white" />,
+    ROS2: <SiRos className="text-pink-400" />,
+    OpenCV: <SiOpencv className="text-blue-600" />,
+    Android: <FaAndroid className="text-green-600" />,
+    Kotlin: <SiKotlin className="text-purple-500" />,
+    HTML: <FaHtml5 className="text-orange-500" />,
+    CSS: <FaCss3Alt className="text-blue-500" />,
+    JS: <FaJs className="text-yellow-400" />,
+    ReactJS: <FaReact className="text-cyan-400" />,
+    Arduino: <SiArduino className="text-blue-600" />,
+    ESP32: <SiEspressif className="text-red-600" />,
+    RPi: <FaRaspberryPi className="text-red-500" />,
+    "Computer Networks": <FaNetworkWired className="text-cyan-500" />,
+    Kubernetes: <SiKubernetes className="text-blue-500" />,
+    Docker: <FaDocker className="text-blue-400" />,
+    AWS: <FaAws className="text-orange-400" />,
+    Pulumi: <SiPulumi className="text-purple-500" />,
+    Git: <FaGit className="text-orange-500" />,
+    "Computer Vision": <SiOpencv className="text-blue-500" />,
+    Cypress: <SiCypress className="text-green-500" />,
+    Solidworks: <SiDassaultsystemes className="text-red-500" />,
+    "Control Systems": <GiDeliveryDrone />,
+  };
+
+  const tec_skills = [
+    "C",
+    "C++",
+    "Java",
+    "Python",
+    "MATLAB",
+    "Shell",
+    "ROS2",
+    "OpenCV",
+    "Solidworks",
+    "Android",
+    "Kotlin",
+    "HTML",
+    "CSS",
+    "JS",
+    "ReactJS",
+    "Cypress",
+    "Arduino",
+    "ESP32",
+    "RPi",
+    "Computer Networks",
+    "Kubernetes",
+    "Docker",
+    "AWS",
+    "Pulumi",
+    "Git",
+    "Control Systems",
+  ];
+
+  const pro_skills = [
+    "Time Management",
+    "Leadership",
+    "Teamwork",
+    "Communication",
+    "Project Management",
+    "Problem Solving",
+    "Agile Methodologies",
+    "Scrum",
+    "Design Thinking",
+    "Systems Engineering",
+    "Technical Writing",
+    "Research & Development",
+  ];
 
   useEffect(() => {
     let fadeOutTimeout;
@@ -46,9 +151,9 @@ export default function SkillsHoverBox() {
 
   const bubbleStyle = `
     text-xs sm:text-base px-3 py-1
-    rounded-full bg-[#f5f9ff]/10 text-white
-    border border-white/20 backdrop-blur
-    transition duration-200
+    rounded-full bg-gray-900/40 text-white
+    border border-white/20 backdrop-blur-md
+    transition duration-200 
     hover:scale-105 hover:bg-[#f5f9ff]/20
   `;
 
@@ -129,20 +234,7 @@ export default function SkillsHoverBox() {
         </div>
 
         <div className={bubbleContainerStyle("left")}>
-          {[
-            "Time Management",
-            "Leadership",
-            "Teamwork",
-            "Communication",
-            "Project Management",
-            "Problem Solving",
-            "Agile Methodologies",
-            "Scrum",
-            "Design Thinking",
-            "Systems Engineering",
-            "Technical Writing",
-            "Research & Development",
-          ].map((skill) => (
+          {pro_skills.map((skill) => (
             <div key={skill} className={bubbleStyle}>
               {skill}
             </div>
@@ -177,25 +269,13 @@ export default function SkillsHoverBox() {
         </div>
 
         <div className={bubbleContainerStyle("right")}>
-          {[
-            "C, C++, Java, Python",
-            "MATLAB, Shell",
-            "ROS2",
-            "OpenCV",
-            "CAD (Additive & Subtractive)",
-            "Android App Dev (Kotlin & Java)",
-            "HTML, CSS, JS",
-            "ReactJS, Cypress",
-            "FPGA (Moku:Go)",
-            "Arduino, ESP32, RPi",
-            "Computer Networks",
-            "Kubernetes, Docker",
-            "PLC (GALIL RIO)",
-            "AWS, Pulumi",
-            "Quadcopter Control Systems",
-          ].map((skill) => (
-            <div key={skill} className={bubbleStyle}>
-              {skill}
+          {tec_skills.map((skill) => (
+            <div
+              key={skill}
+              className={`${bubbleStyle} flex items-center space-x-1`}
+            >
+              <span>{skillMap[skill] ?? <span className="w-5" />}</span>
+              <span>{skill}</span>
             </div>
           ))}
         </div>
