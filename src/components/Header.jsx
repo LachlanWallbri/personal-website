@@ -33,7 +33,14 @@ export default function Header() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="text-xl font-bold">Lachlan Wallbridge</div>
+        <div className="flex items-center space-x-3 text-xl font-bold">
+          <img
+            src="/roboSpace.png"
+            alt="Logo"
+            className="h-8 w-8 object-contain"
+          />
+          <span>Lachlan Wallbridge</span>
+        </div>
 
         {/* Desktop nav */}
         <ul className="hidden md:flex space-x-6 text-gray-700 font-medium">
