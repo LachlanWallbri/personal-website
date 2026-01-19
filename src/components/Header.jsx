@@ -65,6 +65,11 @@ export default function Header() {
             </a>
           </li>
           <li>
+            <a href="#thesis" className="hover:text-blue-600">
+              Thesis
+            </a>
+          </li>
+          <li>
             <a href="#projects" className="hover:text-blue-600">
               Projects
             </a>
@@ -118,6 +123,15 @@ export default function Header() {
               className="block hover:text-blue-600"
             >
               Experience
+            </a>
+          </li>
+          <li>
+            <a
+              href="#thesis"
+              onClick={() => setMenuOpen(false)}
+              className="block hover:text-blue-600"
+            >
+              Thesis
             </a>
           </li>
           <li>

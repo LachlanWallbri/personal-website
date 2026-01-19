@@ -90,7 +90,7 @@ export default function About() {
         <p className="text-gray-700 mb-4 text-justify">
           I'm a Mechatronics and Computer Science student with a strong focus on
           robotics, control systems, computer networks, and scalable software
-          infrastructure. My work spans autonomy, control systems, networking
+          infrastructure. My work spans autonomy, control systems, computer networks
           and embedded system integration, including SLAM pipelines, heuristic
           pathfinding, multithreaded control loops, and cloud-native
           architectures.

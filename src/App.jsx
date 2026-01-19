@@ -12,6 +12,7 @@ import Projects from "./components/Projects";
 import SkillsHoverBox from "./components/Skills";
 import LanternsBackground from "./components/LanternsBg";
 import Footer from "./components/Footer";
+import Thesis from "./components/Thesis";
 
 function App() {
   return (
@@ -63,6 +64,13 @@ function App() {
               Work Experience
             </h2>
             <Experience />
+          </section>
+          {/* Thesis Section */}
+          <section id="thesis" className="max-w-5xl mx-auto py-16 px-4">
+            <h2 className="text-3xl font-semibold mb-8 text-center text-white">
+              Honours Thesis
+            </h2>
+            <Thesis />
           </section>
           {/* Projects Section */}
           <section id="projects" className="max-w-6xl mx-auto pt-16 px-4">

@@ -15,6 +15,7 @@ import {
   FaRaspberryPi,
   FaAndroid,
   FaNetworkWired,
+  FaUnity,
 } from "react-icons/fa";
 import {
   SiCplusplus,
@@ -27,6 +28,7 @@ import {
   SiRos,
   SiCypress,
   SiDassaultsystemes,
+  SiUnrealengine,
 } from "react-icons/si";
 import { PiMathOperationsFill } from "react-icons/pi";
 import { GiDeliveryDrone } from "react-icons/gi";
@@ -63,6 +65,8 @@ export default function SkillsHoverBox() {
     Cypress: <SiCypress className="text-green-500" />,
     Solidworks: <SiDassaultsystemes className="text-red-500" />,
     "Control Systems": <GiDeliveryDrone />,
+    Unity: <FaUnity />,
+    "Unreal Engine": <SiUnrealengine className="text-black" />,
   };
 
   const tec_skills = [
@@ -91,6 +95,8 @@ export default function SkillsHoverBox() {
     "AWS",
     "Pulumi",
     "Git",
+    "Unity",
+    "Unreal Engine",
     "Control Systems",
   ];
 

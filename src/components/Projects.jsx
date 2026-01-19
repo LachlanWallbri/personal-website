@@ -1,11 +1,29 @@
 import { useState } from "react";
 import { FaGithub } from "react-icons/fa";
+import ReactMarkdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 // Tree assets
 import leaf from "../assets/leaf2.svg";
 import trunk from "../assets/trunk.svg";
 import pot from "../assets/pot.svg";
 import bush from "../assets/bush.svg";
+
+// Casino images
+import rviz from "../assets/casino/RViz.png";
+import ui from "../assets/casino/UI.png";
+import board from "../assets/casino/board.png";
+import chipCV from "../assets/casino/chipCV.png";
+import cupCV from "../assets/casino/cup_cv.png";
+import diceCV from "../assets/casino/diceCV.png";
+import gameBoard from "../assets/casino/game_board.jpg";
+import setup from "../assets/casino/setup.jpg";
+
+// Neural Net images
+import preso from "../assets/neural/COMP9444_Clankas_Presentation.pdf";
+import report from "../assets/neural/COMP9444 Project Report.pdf";
+import notebook from "../assets/neural/notebook.png";
 
 // Capstone images
 import capstone1 from "../assets/capstone/graph.jpg";
@@ -34,6 +52,69 @@ import game1 from "../assets/game/award.png";
 const projectsData = [
   {
     id: 1,
+    title: "ROS2 Casino Bot Autonomous System",
+    year: 2025,
+    description:
+      "Team-based robotics project for MTRN4231 focused on autonomous perception, planning, and closed loop control using ROS2. Developed and integrated navigation, state machines, and perception pipelines for a casino-themed dice service robot. Check out the GitHub repo for detailed README and code!",
+    media: [
+      { type: "image", src: setup },
+      { type: "video", videoId: "GC9QNMmfosw" },
+      { type: "video", videoId: "r2lteD8BH_I" },
+      { type: "image", src: gameBoard },
+      { type: "image", src: chipCV },
+      { type: "image", src: cupCV },
+      { type: "image", src: diceCV },
+      { type: "image", src: board },
+      { type: "image", src: ui },
+      { type: "image", src: rviz },
+    ],
+    github: "https://github.com/LachlanWallbri/casino_ur5_project",
+    tools: [
+      "ROS2",
+      "Python",
+      "C++",
+      "State Machines",
+      "Autonomous Navigation",
+      "Robotics",
+      "Closed Loop Control",
+      "Computer Vision",
+      "Rviz",
+    ],
+  },
+  {
+    id: 2,
+    title: "Argument Move Classifier Neural Networks Project",
+    year: 2025,
+    description:
+      "Neural networks project for COMP9444 involving the design and training of machine learning models to solve classification tasks. Implemented and evaluated different network architectures, training strategies, and performance metrics using modern deep learning frameworks. Please read the jypter notebook in the GitHub repository for the full implementation and analysis.",
+    media: [
+      { type: "image", src: notebook },
+      { type: "pdf", src: report },
+      { type: "pdf", src: preso },
+    ],
+    github: "https://github.com/LachlanWallbri/clankasAMC",
+    tools: [
+      "Python",
+      "Neural Networks",
+      "Machine Learning",
+      "PyTorch",
+      "Data Analysis",
+      "Model Evaluation",
+      "LLMs",
+      "Data Preprocessing",
+    ],
+  },
+  // {
+  //   id: 3,
+  //   title: "Multiplayer Quiz Game Web App",
+  //   year: 2025,
+  //   description:
+  //     "Frontend-focused web application developed for COMP6080, inspired by Kahoot-style live quizzes. Built an interactive multiplayer experience with real-time game flow, scoring, and responsive UI using modern web development practices.",
+  //   media: [{ type: "image", src: website1 }],
+  //   tools: ["JavaScript", "React", "HTML", "CSS", "Frontend Development"],
+  // },
+  {
+    id: 4,
     title: "Capstone: Industrial Delivery Robot Reverse Engineering",
     year: 2024,
     description:
@@ -60,7 +141,7 @@ const projectsData = [
     ],
   },
   {
-    id: 2,
+    id: 5,
     title: "Personal Portfolio & Resume Website",
     year: 2025,
     description:
@@ -70,7 +151,7 @@ const projectsData = [
     tools: ["React", "TailwindCSS", "Framer Motion", "JavaScript", "Git"],
   },
   {
-    id: 3,
+    id: 6,
     title: "Robot Manipulator Puzzle Solver",
     year: 2024,
     description:
@@ -91,7 +172,7 @@ const projectsData = [
     ],
   },
   {
-    id: 4,
+    id: 7,
     title: "ChromaCapture puzzle game",
     year: 2024,
     description:
@@ -109,7 +190,7 @@ const projectsData = [
     ],
   },
   {
-    id: 5,
+    id: 8,
     title: "SLAM via Stochastic State Estimation",
     year: 2024,
     description:
@@ -127,7 +208,7 @@ const projectsData = [
     ],
   },
   {
-    id: 6,
+    id: 9,
     title: "ROS2 System Integration and Annotation",
     year: 2023,
     description:
@@ -150,7 +231,7 @@ const projectsData = [
     ],
   },
   {
-    id: 7,
+    id: 10,
     title: "Maze Mapping and Traversal Robot",
     year: 2023,
     description:
@@ -170,7 +251,7 @@ const projectsData = [
     ],
   },
   {
-    id: 8,
+    id: 11,
     title: "PLC-Based Multithreaded Robot System",
     year: 2024,
     description:
@@ -277,7 +358,7 @@ function ProjectCard({ title, year, description, media = [], github, tools }) {
             className="w-full h-full object-contain"
             loading="lazy"
           />
-        ) : (
+        ) : current.type === "video" ? (
           <iframe
             src={`https://www.youtube.com/embed/${current.videoId}?mute=1${
               current.start ? `&start=${current.start}` : ""
@@ -287,7 +368,13 @@ function ProjectCard({ title, year, description, media = [], github, tools }) {
             allowFullScreen
             className="w-full h-full"
           />
-        )}
+        ) : current.type === "pdf" ? (
+          <iframe
+            src={current.src}
+            title={`${title} PDF`}
+            className="w-full h-full"
+          />
+        ) : null}
 
         {media.length > 1 && (
           <>

@@ -6,7 +6,7 @@ const timelineItems = [
   {
     title: "Software Engineer Intern",
     company: "Saber Astronautics",
-    date: "January 2025 – June 2025",
+    date: "January 2025 – May 2025",
     description: [
       "Deployed AWS-based cloud infrastructure for satellite telemetry capture, processing, and delegation using Pulumi (IaC) and Python.",
       "Translated Docker Compose into a Kubernetes cluster and set up a local development environment with Minikube.",
@@ -28,7 +28,7 @@ const timelineItems = [
   {
     title: "Customer Service & Online Supervisor",
     company: "Coles Supermarkets",
-    date: "September 2018 – Present",
+    date: "September 2018 – September 2025",
     description: [
       "Managed a team of 5+ online shoppers and 10+ service staff to ensure timely and accurate order fulfillment.",
       "Achieved and maintained a 90%+ perfect order rate.",
@@ -70,7 +70,7 @@ const waveGradient =
 
 const highlightKeywords = (text) => {
   const escapedKeywords = keywords.map((k) =>
-    k.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&")
+    k.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&"),
   );
   const regex = new RegExp(`(${escapedKeywords.join("|")})`, "gi");
 
