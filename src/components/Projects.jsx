@@ -82,28 +82,30 @@ const projectsData = [
     ],
   },
   {
-    id: 2,
-    title: "Argument Move Classifier Neural Networks Project",
-    year: 2025,
-    description:
-      "Neural networks project for COMP9444 involving the design and training of machine learning models to solve classification tasks. Implemented and evaluated different network architectures, training strategies, and performance metrics using modern deep learning frameworks. Please read the jypter notebook in the GitHub repository for the full implementation and analysis.",
-    media: [
-      { type: "image", src: notebook },
-      { type: "pdf", src: report },
-      { type: "pdf", src: preso },
-    ],
-    github: "https://github.com/LachlanWallbri/clankasAMC",
-    tools: [
-      "Python",
-      "Neural Networks",
-      "Machine Learning",
-      "PyTorch",
-      "Data Analysis",
-      "Model Evaluation",
-      "LLMs",
-      "Data Preprocessing",
-    ],
-  },
+      id: 2,
+      title: "Argument Polarity Classification with Neural Networks",
+      year: 2025,
+      description:
+        "Developed a neural network system to classify arguments in debates as supporting or opposing a claim. Designed models that incorporate debate context by representing the structure as a graph, allowing statements to be analyzed with surrounding context instead of in isolation. Trained and evaluated multiple network architectures to process large-scale text data efficiently, achieving high classification accuracy and outperforming baseline models on a real-world debate dataset. Full implementation and analysis are available in the accompanying Jupyter notebook.",
+      media: [
+        { type: "image", src: notebook },
+        { type: "pdf", src: report },
+        { type: "pdf", src: preso },
+      ],
+      github: "https://github.com/LachlanWallbri/clankasAMC",
+      tools: [
+        "Python",
+        "PyTorch",
+        "Neural Networks",
+        "Machine Learning",
+        "NLP",
+        "Data Analysis",
+        "Graph Modelling",
+        "Model Evaluation",
+        "Data Preprocessing"
+      ],
+  }
+
   // {
   //   id: 3,
   //   title: "Multiplayer Quiz Game Web App",
