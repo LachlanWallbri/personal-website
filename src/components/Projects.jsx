@@ -52,10 +52,10 @@ import game1 from "../assets/game/award.png";
 const projectsData = [
   {
     id: 1,
-    title: "ROS2 Casino Bot Autonomous System",
+    title: "Autonomous ROS2 Dice-Playing Robot",
     year: 2025,
     description:
-      "Team-based robotics project for MTRN4231 focused on autonomous perception, planning, and closed loop control using ROS2. Developed and integrated navigation, state machines, and perception pipelines for a casino-themed dice service robot. Check out the GitHub repo for detailed README and code!",
+      "Developed a UR5e robot system capable of autonomously playing and managing a dice-based casino game. Implemented a multi-node ROS2 pipeline integrating computer vision, motion planning, and game logic for closed-loop operation. Designed a custom linear gripper using CAD and perception feedback to reliably handle dice in real time. Built a web dashboard and player database to track game state, player bets, and results. The project achieved high marks and was awarded 3rd Place for Best Project. Full implementation details are available in the GitHub repository.",
     media: [
       { type: "image", src: setup },
       { type: "video", videoId: "GC9QNMmfosw" },
@@ -73,11 +73,13 @@ const projectsData = [
       "ROS2",
       "Python",
       "C++",
+      "Computer Vision",
       "State Machines",
       "Autonomous Navigation",
-      "Robotics",
       "Closed Loop Control",
-      "Computer Vision",
+      "Motion Planning",
+      "Web Dashboard",
+      "Robotics",
       "Rviz",
     ],
   },
