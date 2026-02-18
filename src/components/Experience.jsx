@@ -8,11 +8,12 @@ const timelineItems = [
     company: "Saber Astronautics",
     date: "January 2025 – May 2025",
     description: [
-      "Deployed AWS-based cloud infrastructure for satellite telemetry capture, processing, and delegation using Pulumi (IaC) and Python.",
-      "Translated Docker Compose into a Kubernetes cluster and set up a local development environment with Minikube.",
-      "Integrated hardware and developed network protocols for client projects, including potential deployment to the International Space Station.",
-      "Interfaced with sensors using UART, SPI, and I2C protocols; supported NMEA and ICMP packet types.",
-      "Translated sensor libraries into Python for compatibility with a newly released FPGA via its custom API.",
+      "Designed and deployed AWS-based cloud infrastructure for satellite telemetry capture, processing, and task delegation using Pulumi (Infrastructure as Code), Python, Docker, and Kubernetes.",
+      "Translated a Docker Compose architecture into a production-ready Kubernetes cluster and configured a local Minikube development environment for testing and validation.",
+      "Developed and delivered a containerised command and control platform for custom hardware systems, deployed via IaC and presented to clients to support funding milestones before handoff to senior engineers.",
+      "Integrated multiple sensors with an unsupported FPGA platform, translating vendor libraries into Python and interfacing via a custom API to enable rapid prototyping.",
+      "Engineered a multithreaded, object-oriented API to manage concurrent hardware operations over a network.",
+      "Implemented telemetry ingress and egress pipelines and low-level communication interfaces (UART, SPI, I2C), supporting structured packet formats including NMEA and ICMP.",
     ],
   },
   {
@@ -38,33 +39,49 @@ const timelineItems = [
   },
 ];
 
-// Example keywords to bold (you can customize)
+// Keywords to bold
 const keywords = [
+  // Cloud / DevOps
   "AWS",
   "Pulumi",
+  "Infrastructure as Code",
   "Python",
+  "Docker",
   "Docker Compose",
   "Kubernetes",
   "Minikube",
+  "CI/CD",
+  "Bitbucket Pipelines",
+
+  // Systems / Embedded
+  "FPGA",
+  "multithreaded",
+  "object-oriented API",
+  "telemetry",
   "UART",
   "SPI",
   "I2C",
   "NMEA",
   "ICMP",
-  "FPGA",
-  "3D printers",
-  "CAD",
-  "order",
-  "team",
-  "process improvements",
-  "network protocols",
-  "client projects",
-  "API",
+
+  // Delivery / Impact
+  "command and control",
+  "funding milestones",
+  "handoff",
   "90%",
   "20%",
-  "efficiency",
+
+  // Mechatronics
+  "3D printers",
+  "CAD",
+
+  // Leadership / Operations
+  "team of 5+",
+  "team of 10+",
+  "process improvements",
+  "operational efficiency",
 ];
-// linear-gradient(90deg,#C72C48,  #F88F1D, #C72C48)
+
 const waveGradient =
   "linear-gradient(90deg,rgb(22, 59, 119), rgb(86, 133, 207),rgb(22, 59, 119))";
 
